@@ -66,6 +66,8 @@ export default class Rejseplanen {
             await Promise.all(departures.map(async departure => {
                 const url = new URL(departure.JourneyDetailRef.ref);
 
+                url.protocol = 'https:';
+
                 const response = await fetch(url);
                 const journeyDetail = (await response.json()).JourneyDetail;
 
