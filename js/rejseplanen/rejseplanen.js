@@ -4,7 +4,7 @@ import Csv from "./csv.js";
 export default class Rejseplanen {
 
     get #TRAVEL_API_URL() {return 'https://xmlopen.rejseplanen.dk/bin/rest.exe/'};
-    get #TIME_API_URL() {return 'http://worldtimeapi.org/api/timezone/'};
+    get #TIME_API_URL() {return 'https://worldtimeapi.org/api/timezone/'};
 
     #dataUrls = {
         base: 'js/rejseplanen/data/',
