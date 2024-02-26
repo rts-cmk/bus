@@ -17,6 +17,8 @@ export default class Rejseplanen {
     async init() {
 
         const path = window.location.pathname.replace(/^(\/.*\.html)$/, '');
+
+        console.log('csv path: ' + path + this.#dataUrls.base + this.#dataUrls.stops);
         
         this.#stops = await Csv.load(
             path + this.#dataUrls.base + this.#dataUrls.stops, 
@@ -74,6 +76,9 @@ export default class Rejseplanen {
 
     async getDeparturesByStopName(name, limit = -1, journeyDetails = false) {
         const stop = await this.getStopByName(name);
+
+        if (!stop) throw new Error('Stop not found');
+
         return await this.getDeparturesByStopId(stop.id, limit, journeyDetails);
     }
 
