@@ -7,7 +7,7 @@ export default class Rejseplanen {
     get #TIME_API_URL() {return 'http://worldtimeapi.org/api/timezone/'};
 
     #dataUrls = {
-        base: 'js/rejseplanen/data/',
+        base: '/js/rejseplanen/data/',
         stops: 'RejseplanenStoppesteder.csv'
     }
     
@@ -15,8 +15,10 @@ export default class Rejseplanen {
     #stops = null;
 
     async init() {
+        const baseUrl = window.location.origin;
+
         this.#stops = await Csv.load(
-            this.#dataUrls.base + this.#dataUrls.stops, 
+            baseUrl + this.#dataUrls.base + this.#dataUrls.stops, 
             ['id', 'name', 'lattitude', 'longitude'], 
             {skipRows: 1, regexReplace: [[/"/g, '']], encoding: 'windows-1252'});
 
