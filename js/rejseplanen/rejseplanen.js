@@ -27,7 +27,7 @@ export default class Rejseplanen {
 
         this.#initialized = true;
 
-        console.log('Loaded stops: ' + this.#stops);
+        console.log('Loaded stops: ' + this.#stops.length + ' stops');
     }
 
     async getStopByName(name) {

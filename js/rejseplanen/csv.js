@@ -18,7 +18,7 @@ export default class Csv extends EventTarget {
 
         if (data.length === 0) throw new Error('CSV: Decode failed.');
 
-        console.log('CSV: decoded data: ' + data);
+        console.log('CSV: decoded data: ' + data.length + ' characters');
 
         if (options.regexReplace) console.log('CSV: replacing regex: ' + options.regexReplace);
 
@@ -26,21 +26,21 @@ export default class Csv extends EventTarget {
 
         const dataArray = data.split('\r\n').map( row => row.split(';') );
 
-        console.log('CSV: data array: ' + dataArray);
+        console.log('CSV: data array: ' + dataArray.length + ' rows');
 
         if (options.skipRows) dataArray.splice(0, options.skipRows);
 
-        const json = dataArray.map( row => {
-            const obj = {};
+        const returnObject = dataArray.map( row => {
+            const object = {};
             
             columns.forEach( (column, index) => {
-                obj[column] = row[index];
+                object[column] = row[index];
             });
-            return obj;
+            return object;
         });
 
-        console.log('CSV: json: ' + json);
+        console.log('CSV return object length: ' + returnObject.length + ' rows');
 
-        return json;
+        return returnObject;
     }
 }
