@@ -2,7 +2,10 @@ export default class Csv extends EventTarget {
 
     static async load(source, columns, options = {}) {
 
+        console.log('CSV: loading csv from: ' + source);
+
         const response = await fetch(source);
+        if (!response.ok) throw new Error('Failed to load csv: ' + response.status + '\n' + response.statusText);
         let data = await response.arrayBuffer();
 
         const decoder = new TextDecoder(options.encoding ?? 'utf-8');
