@@ -16,7 +16,7 @@ export default class Rejseplanen {
 
     async init() {
 
-        const path = window.location.href.replace(/(.*)\/.*\.[\w\d]+$|(.*)\/$/, '$1/');
+        const path = window.location.href.replace(/(.*)\/.*\.[\w\d]+$|(.*)\/$/, '$1$2/');
 
         console.log('csv path: ' + path + this.#dataUrls.base + this.#dataUrls.stops);
         
