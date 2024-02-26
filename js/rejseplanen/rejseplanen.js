@@ -7,7 +7,7 @@ export default class Rejseplanen {
     get #TIME_API_URL() {return 'http://worldtimeapi.org/api/timezone/'};
 
     #dataUrls = {
-        base: 'js/rejseplanen/data/',
+        base: '../js/rejseplanen/data/',
         stops: 'RejseplanenStoppesteder.csv'
     }
     
