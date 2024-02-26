@@ -39,6 +39,8 @@ export default class Csv extends EventTarget {
             return obj;
         });
 
+        console.log('CSV: json: ' + json);
+
         return json;
     }
 }
