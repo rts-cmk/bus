@@ -16,7 +16,7 @@ export default class Rejseplanen {
 
     async init() {
 
-        const path = window.location.pathname.replace(/^\/(.*)\/$/, '$1');
+        const path = window.location.pathname.replace(/^(\/.*\.html)$/, '');
         
         this.#stops = await Csv.load(
             path + this.#dataUrls.base + this.#dataUrls.stops, 
