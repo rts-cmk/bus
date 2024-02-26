@@ -26,6 +26,8 @@ export default class Rejseplanen {
             {skipRows: 1, regexReplace: [[/"/g, '']], encoding: 'windows-1252'});
 
         this.#initialized = true;
+
+        console.log(this.#stops);
     }
 
     async getStopByName(name) {
