@@ -24,7 +24,10 @@ export default class Csv extends EventTarget {
 
         if (options.regexReplace) options.regexReplace.forEach(pair => data = data.replace(pair[0], pair[1]));
 
-        const dataArray = data.split('\r\n').map( row => row.split(';') );
+        if (options.regexReplace) console.log('CSV: replaced data: ' + data.length + ' characters');
+        
+
+        const dataArray = data.split('\n').map( row => row.split(';') );
 
         console.log('CSV: data array: ' + dataArray.length + ' rows');
 
