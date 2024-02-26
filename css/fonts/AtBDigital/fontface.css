@@ -1,0 +1,20 @@
+@font-face {
+  font-family: "AtBDigital";
+  font-weight: 400;
+  src: url("TTF_AtB2Screen-Regular.ttf") format("truetype"),
+    url("AtBDigitalRegular.eot");
+}
+
+@font-face {
+  font-family: "AtBDigital";
+  font-weight: 500;
+  src: url("TTF_AtB2Screen-Medium.ttf") format("truetype"),
+    url("AtBDigitalMedium.eot");
+}
+
+@font-face {
+  font-family: "AtBDigital";
+  font-weight: 600;
+  src: url("TTF_AtB2Screen-Medium.ttf") format("truetype"),
+    url("AtBDigitalBold.eot");
+}

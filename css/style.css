@@ -1,0 +1,86 @@
+@import url(fonts/AtBDigital/fontface.css);
+@import url(variables.css);
+@import url(animations.css);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'AtBDigital', sans-serif;
+    font-size: 120%;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    padding: 1em;
+    max-width: 1000px;
+    margin: auto;
+}
+
+h1, p.time {
+    font-size: calc(3rem + 1.5vw);
+    line-height: 1.2;
+    font-weight: 700;
+    color: var(--clr-primary-dot-blue);
+    display: flex;
+    align-items: center;
+}
+
+h1 img {
+    height: calc(3rem + 1.5vw);
+}
+
+h2 {
+    font-size: calc(1rem + 1vw);
+    font-weight: 400;
+    color: var(--clr-neutral-dark-grey);
+
+}
+
+p.time {
+    font-weight: 400;
+    color: var(--clr-secondary-pink);
+    grid-row: span 2;
+    justify-content: end;
+}
+
+p.time span {
+    animation: flash 1s infinite;
+}
+
+.schedule {
+    width: 100%;
+    text-align: left;
+    border-collapse: collapse;
+    margin-top: 2em;
+    grid-column: span 2;
+}
+
+.schedule__header, .schedule__row:nth-child(even) {
+    background-color: var(--clr-neutral-grey);
+}
+
+.schedule__header, .schedule__cell {
+    padding: 1rem;
+}
+
+.schedule__header {
+    font-size: 1.5rem;
+}
+
+.schedule__cell span {
+    display: inline-block;
+    text-align: right;
+    vertical-align: middle;
+    min-width: 5ch;
+}
+
+.schedule__cell img {
+    height: 1em;
+    vertical-align: middle;
+    margin-left: 3px;
+}
