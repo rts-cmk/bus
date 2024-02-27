@@ -25,8 +25,8 @@ async function update() {
     departures.forEach(departure => {
         const minutesUntilDeparture = Math.ceil((departure.dateTime - time.dateTime) / 60000);
 
-        const takesBicycles = departure.journeyDetail.Note.find(note => note.text === 'Cykelmedtagning gratis');
-        const information = departure.journeyDetail.Note.filter(
+        const takesBicycles = departure.journeyDetail.Note?.find(note => note.text === 'Cykelmedtagning gratis');
+        const information = departure.journeyDetail.Note?.filter(
                 note => note.text !== 'Cykelmedtagning gratis' && 
                 note.text.includes('Retning') === false
             ).map(note => note.text).join('<br>');
