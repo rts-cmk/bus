@@ -17,7 +17,7 @@ body {
     display: grid;
     grid-template-columns: auto 1fr;
     padding: 1em;
-    max-width: 1000px;
+    max-width: 1200px;
     margin: auto;
 }
 
@@ -58,6 +58,7 @@ p.time span {
     border-collapse: collapse;
     margin-top: 2em;
     grid-column: span 2;
+    table-layout: fixed;
 }
 
 .schedule__header, .schedule__row:nth-child(even) {
@@ -70,6 +71,12 @@ p.time span {
 
 .schedule__header {
     font-size: 1.5rem;
+    width: 30%;
+    white-space: nowrap;
+}
+
+.schedule__header:last-child {
+    width: 100%;
 }
 
 .schedule__cell span {
@@ -83,4 +90,46 @@ p.time span {
     height: 1em;
     vertical-align: middle;
     margin-left: 3px;
+}
+
+@media (max-width: 1000px) {
+    body {
+        font-size: 80%;
+    }
+}
+
+@media (max-width: 800px) {
+
+    .wrapper {
+        grid-template-columns: auto;
+    }
+
+    h1, p.time {
+        font-size: calc(2rem + 1.5vw);
+        margin: auto;
+    }
+
+    p.time {
+        grid-row: 1;
+    }
+
+    h2 {
+        margin: auto;
+    }
+
+    .schedule {
+       grid-column: auto;
+    }
+
+    .schedule__header {
+        font-size: 1rem;
+    }
+
+    .schedule__header:last-child, .schedule__cell:last-child {
+        display: none;
+    }
+
+    .schedule__cell {
+        font-size: .7rem;
+    }
 }

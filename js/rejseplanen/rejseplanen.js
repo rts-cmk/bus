@@ -16,12 +16,10 @@ export default class Rejseplanen {
 
     async init() {
 
-        const path = window.location.href.replace(/(.*)\/.*\.[\w\d]+$|(.*)\/$/, '$1$2/');
-
-        console.log('csv path: ' + path + this.#dataUrls.base + this.#dataUrls.stops);
+        console.log('csv path: ' + this.#dataUrls.base + this.#dataUrls.stops);
         
         this.#stops = await Csv.load(
-            path + this.#dataUrls.base + this.#dataUrls.stops, 
+            this.#dataUrls.base + this.#dataUrls.stops, 
             ['id', 'name', 'lattitude', 'longitude'], 
             {skipRows: 1, regexReplace: [[/"/g, '']], encoding: 'windows-1252'});
 

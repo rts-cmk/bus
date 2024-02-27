@@ -15,9 +15,12 @@ async function update() {
     const time = await journeyPlanner.getCurrentTime();
 
     const timeElement = document.querySelector('.time');
+    const stopElement = document.querySelector('.stop');
     const tableElement = document.querySelector('.schedule');
 
     let output = '';
+
+    stopElement.textContent = stop;
 
     departures.forEach(departure => {
         const minutesUntilDeparture = Math.ceil((departure.dateTime - time.dateTime) / 60000);
